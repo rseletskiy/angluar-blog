@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MainLaoutComponent } from './shared/components/main-laout/main-laout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import { PostComponent } from './shared/components/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLaoutComponent,
     HomePageComponent,
-    PostPageComponent
+    PostPageComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
