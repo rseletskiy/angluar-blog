@@ -42,8 +42,6 @@ export class LoginPageComponent implements OnInit {
       password: this.loginForm.value.password
     }
 
-    console.log(user);
-    
     this.auth.login(user).subscribe(() => {
       this.loginForm.reset()
       this.router.navigate(['/admin', 'dashboard'])
