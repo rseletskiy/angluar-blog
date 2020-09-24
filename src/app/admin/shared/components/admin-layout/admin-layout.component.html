@@ -5,7 +5,7 @@
         </a>
     </h1>
 
-    <ul>
+    <ul *ngIf="auth.isAuthenticated()">
         <li routerLinkActive='active'>
             <a [routerLink]="['/admin', 'dashboard']">Dashboard</a>
         </li>

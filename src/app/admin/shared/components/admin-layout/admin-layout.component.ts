@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 export class AdminLayoutComponent implements OnInit {
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private router: Router
     ) { }
 
