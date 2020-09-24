@@ -12,6 +12,7 @@ import { AuthService } from '../shared/services/auth.service';
 export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup
+  submitted = false;
 
   constructor(
     private auth: AuthService,
@@ -37,6 +38,8 @@ export class LoginPageComponent implements OnInit {
       return
     }
 
+    this.submitted = true
+
     const user: User = {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
@@ -45,6 +48,7 @@ export class LoginPageComponent implements OnInit {
     this.auth.login(user).subscribe(() => {
       this.loginForm.reset()
       this.router.navigate(['/admin', 'dashboard'])
+      this.submitted = false;
     })
   }
 }

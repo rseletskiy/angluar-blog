@@ -36,7 +36,7 @@
     <button 
         type="submit" 
         class="btn btn-primary"
-        [disabled]="loginForm.invalid"
+        [disabled]="loginForm.invalid || submitted"
     >Log In</button>
 
 </form>
