@@ -32,6 +32,8 @@ export class CreatePageComponent implements OnInit {
       author: this.createPostForm.value.author,
       date: new Date()
     }
+    console.log(post);
+    
 
   }
 
