@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AuthService } from './shared/services/auth.service';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from './shared/services/auth.guard'
 
@@ -14,9 +13,9 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 
 @NgModule({
     declarations: [
-        AdminLayoutComponent, 
-        DashboardPageComponent, 
-        CreatePageComponent, 
+        AdminLayoutComponent,
+        DashboardPageComponent,
+        CreatePageComponent,
         EditPageComponent,
         LoginPageComponent
     ],
@@ -28,11 +27,11 @@ import { EditPageComponent } from './edit-page/edit-page.component';
         RouterModule.forChild([
             {
                 path: '', component: AdminLayoutComponent, children: [
-                    {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
-                    {path: 'login', component: LoginPageComponent},
-                    {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
-                    {path: 'create', component: CreatePageComponent, canActivate: [AuthGuard]},
-                    {path: 'post/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]}
+                    { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
+                    { path: 'login', component: LoginPageComponent },
+                    { path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard] },
+                    { path: 'create', component: CreatePageComponent, canActivate: [AuthGuard] },
+                    { path: 'post/:id/edit', component: EditPageComponent, canActivate: [AuthGuard] }
                 ]
             }
         ])
@@ -41,10 +40,9 @@ import { EditPageComponent } from './edit-page/edit-page.component';
         RouterModule
     ],
     providers: [
-        AuthService,
         AuthGuard
     ]
 })
-export class AdminModule{
+export class AdminModule {
 
 }

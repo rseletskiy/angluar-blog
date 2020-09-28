@@ -24,16 +24,18 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.queryParams.subscribe((params: Params) => {
-      if(params['loginAgain']){
+      if (params['loginAgain']) {
         this.message = 'Please enter data'
+      } else if (params['AuthFailed']) {
+        this.message = 'The session has expired. Re-enter the data'
       }
     })
 
     this.loginForm = new FormGroup({
       email: new FormControl(null, [
-          Validators.required,
-          Validators.email
-        ]),
+        Validators.required,
+        Validators.email
+      ]),
       password: new FormControl(null, [
         Validators.required,
         Validators.minLength(6)
@@ -41,9 +43,9 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
-  submit(){
+  submit() {
 
-    if(this.loginForm.invalid){
+    if (this.loginForm.invalid) {
       return
     }
 
