@@ -21,9 +21,8 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.date | date:'medium' }}</td>
                 <td>
-                    <button class="btn btn-link open" (onclick)="remove(post.id)"
-                        [routerLink]="['/admin', 'post', post.id, 'edit']">Open</button>
-                    <a>Remove</a>
+                    <button class="btn btn-link open" [routerLink]="['/admin', 'post', post.id, 'edit']">Open</button>
+                    <a (click)="remove(post.id)">Remove</a>
                 </td>
             </tr>
         </tbody>
